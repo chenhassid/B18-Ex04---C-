@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    class MainMenu
+    public class MainMenu
     {
         private const string k_MenuPartition = "***************************";
         private const int k_ExitOption = 0;
@@ -36,12 +32,15 @@ namespace Ex04.Menus.Interfaces
    
         public SubMenu SubMenuItem
         {
-            get { return m_SubMenuItem; }
+            get
+            {
+                return m_SubMenuItem;
+            }
         }
 
         public void AddItemToMainMenu(MenuItem i_MenuItem)
         {
-            SubMenuItem.AddItem(i_MenuItem);
+            m_SubMenuItem.AddItem(i_MenuItem);
         }
 
         public void Show()

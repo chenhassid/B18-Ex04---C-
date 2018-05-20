@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    class ExecutableItem : MenuItem
+    public class ExecutableItem : MenuItem
     {
         private IExecutable m_Executable;
 
@@ -17,8 +13,14 @@ namespace Ex04.Menus.Interfaces
 
         public IExecutable Executable
         {
-            get { return m_Executable; }
-            set { m_Executable = value; }
+            get
+            {
+                return m_Executable;
+            }
+            set
+            {
+                m_Executable = value;
+            }
         }
 
         public ExecutableItem(string i_Title, IExecutable i_Executable)

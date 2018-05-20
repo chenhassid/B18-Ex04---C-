@@ -37,7 +37,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        public class CharsCount : IExecutable
+        public class CountCapitals : IExecutable
         {
             public void Execute()
             {
