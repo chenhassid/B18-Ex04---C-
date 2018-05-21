@@ -65,7 +65,6 @@ namespace Ex04.Menus.Delegates
                 {
                     printSubMenu();
                     inputOptionNumber = getValidInputOption();
-                    Console.Clear();
                     MovetoNextChosenOption(inputOptionNumber);
                 }
             }
@@ -129,7 +128,7 @@ namespace Ex04.Menus.Delegates
 
         private void MovetoNextChosenOption(int i_InputOptionNumber)
         {
-            // Console.Clear();
+            Console.Clear();
             if (i_InputOptionNumber != BackOption)
             {
                 ListOfMenuItems[i_InputOptionNumber].ExecuteMenuOption();
