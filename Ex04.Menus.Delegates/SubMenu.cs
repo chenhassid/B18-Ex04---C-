@@ -85,7 +85,7 @@ namespace Ex04.Menus.Delegates
             }
 
             Console.WriteLine(string.Format("{0}{1}{2}{1}", Title, Environment.NewLine, MenuPartition));
-            Console.WriteLine(string.Format("Please choose one of the options below: {0}/{1} or 0 to {2}", 1, ListOfMenuItems.Count - 1, exitOrBackString));
+           
 
             foreach (MenuItem currentMenuItem in ListOfMenuItems)
             {
@@ -94,6 +94,7 @@ namespace Ex04.Menus.Delegates
                     Console.WriteLine(string.Format("{0}: {1}", currentMenuItem.MenuItemOptionNumber, currentMenuItem.Title));
                 }
             }
+            Console.WriteLine(string.Format("{0}Please choose one of the options: {1}/{2} or 0 to {3}",Environment.NewLine, 1, ListOfMenuItems.Count - 1, exitOrBackString));
         }
 
         private int getValidInputOption()
