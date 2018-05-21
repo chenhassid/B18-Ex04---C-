@@ -41,9 +41,6 @@ namespace Ex04.Menus.Delegates
             ExecutableItem backItem = new ExecutableItem();
             backItem.Title = "Back";
             backItem.MenuItemOptionNumber = k_BackOption;
-
-            Console.WriteLine("REache HER?");
-
             ListOfMenuItems.Add(backItem);
         }
 
@@ -68,6 +65,7 @@ namespace Ex04.Menus.Delegates
                 {
                     printSubMenu();
                     inputOptionNumber = getValidInputOption();
+                    Console.Clear();
                     MovetoNextChosenOption(inputOptionNumber);
                 }
             }
@@ -129,7 +127,7 @@ namespace Ex04.Menus.Delegates
 
         private void MovetoNextChosenOption(int i_InputOptionNumber)
         {
-            Console.Clear();
+          //  Console.Clear();
 
             if (i_InputOptionNumber != BackOption)
             {

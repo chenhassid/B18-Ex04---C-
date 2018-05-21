@@ -2,18 +2,18 @@
 
 namespace Ex04.Menus.Delegates
 {
-    public delegate void ExecutableDelegate();
+    public delegate void ExecutableHandler();
 
     public class ExecutableItem : MenuItem
     {
-        public event ExecutableDelegate Execute;
+        public event ExecutableHandler Execute;
 
         public ExecutableItem()
         {
             Execute = null;
         }
            
-        public ExecutableItem(string i_Title, ExecutableDelegate i_ItemToExecute)
+        public ExecutableItem(string i_Title, ExecutableHandler i_ItemToExecute)
         {
             Title = i_Title;
             Execute += i_ItemToExecute;

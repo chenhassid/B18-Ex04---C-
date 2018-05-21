@@ -7,10 +7,13 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-            Interfaces.MainMenu firstMenuToShow = buildMainMenuInterface();
-            firstMenuToShow.Show();
+            Interfaces.MainMenu interfaceMenu = buildMainMenuInterface();
+            Delegates.MainMenu delegateMenu = buildMainMenuDelegates();
+            interfaceMenu.Show();
+            delegateMenu.Show();
         }
 
+        // building the main menu using interfaces
         private static Interfaces.MainMenu buildMainMenuInterface()
         {
             // Create Executable Items 
@@ -33,18 +36,19 @@ namespace Ex04.Menus.Test
             VersionAndCapitalsMenu.AddItem(executableItemShowVersion);
 
             //Creates the Main Menu with both of the sub menus
-            Interfaces.MainMenu mainMenuInterface = new Interfaces.MainMenu("Main Menu Of the Interface");
+            Interfaces.MainMenu mainMenuInterface = new Interfaces.MainMenu("Main Menu Using Interface");
             mainMenuInterface.AddItemToMainMenu(showDateAndTimeMenu);
             mainMenuInterface.AddItemToMainMenu(VersionAndCapitalsMenu);
             return mainMenuInterface;
         }
 
-        private static Delegates.MainMenu buildMenuWithDelegates()
+        // building the main menu using delegates
+        private static Delegates.MainMenu buildMainMenuDelegates()
         {
-            ExecutableDelegate showTimeExecute = new MenuDelegatesAndInterfaces.ShowTime().Execute;
-            ExecutableDelegate showDateExcute = new MenuDelegatesAndInterfaces.ShowDate().Execute;
-            ExecutableDelegate countCapitalsExcute = new MenuDelegatesAndInterfaces.CountCapitals().Execute;
-            ExecutableDelegate showVersionExcute = new MenuDelegatesAndInterfaces.ShowVersion().Execute;
+            ExecutableHandler showTimeExecute = new MenuDelegatesAndInterfaces.ShowTime().Execute;
+            ExecutableHandler showDateExcute = new MenuDelegatesAndInterfaces.ShowDate().Execute;
+            ExecutableHandler countCapitalsExcute = new MenuDelegatesAndInterfaces.CountCapitals().Execute;
+            ExecutableHandler showVersionExcute = new MenuDelegatesAndInterfaces.ShowVersion().Execute;
 
             Delegates.ExecutableItem executableItemShowTime = new Delegates.ExecutableItem("Show Time", showTimeExecute);
             Delegates.ExecutableItem executableItemShowDate = new Delegates.ExecutableItem("Show Date", showDateExcute);
@@ -60,7 +64,7 @@ namespace Ex04.Menus.Test
             VersionAndCapitalsMenu.AddItem(executableItemShowVersion);
 
             //Creates the Main Menu with both of the sub menus
-            Delegates.MainMenu mainMenuDelegate = new Delegates.MainMenu("Main Menu Of the Interface");
+            Delegates.MainMenu mainMenuDelegate = new Delegates.MainMenu("Main Menu Using Delegate");
             mainMenuDelegate.AddItemToMainMenu(showDateAndTimeMenu);
             mainMenuDelegate.AddItemToMainMenu(VersionAndCapitalsMenu);
             return mainMenuDelegate;
