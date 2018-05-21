@@ -19,8 +19,15 @@ namespace Ex04.Menus.Interfaces
 
         public List<MenuItem> ListOfMenuItems
         {
-            get { return m_ListOfMenuItems; }
-            set { m_ListOfMenuItems = value; }
+            get
+            {
+                return m_ListOfMenuItems;
+            }
+
+            set
+            {
+                m_ListOfMenuItems = value;
+            }
         }
 
         public int BackOption

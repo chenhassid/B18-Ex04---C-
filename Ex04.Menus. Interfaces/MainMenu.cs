@@ -40,13 +40,13 @@ namespace Ex04.Menus.Interfaces
 
         public void AddItemToMainMenu(MenuItem i_MenuItem)
         {
-            m_SubMenuItem.AddItem(i_MenuItem);
+            SubMenuItem.AddItem(i_MenuItem);
         }
 
         public void Show()
         {
             Console.Clear();
-            m_SubMenuItem.ExecuteMenuOption();
+            SubMenuItem.ExecuteMenuOption();
         }
     }
 }

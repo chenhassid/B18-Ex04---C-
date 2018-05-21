@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Delegates
 {
@@ -44,13 +40,13 @@ namespace Ex04.Menus.Delegates
 
         public void AddItemToMainMenu(MenuItem i_MenuItem)
         {
-            m_SubMenuItem.AddItem(i_MenuItem);
+            SubMenuItem.AddItem(i_MenuItem);
         }
 
         public void Show()
         {
             Console.Clear();
-            m_SubMenuItem.ExecuteMenuOption();
+            SubMenuItem.ExecuteMenuOption();
         }
     }
 }
