@@ -29,7 +29,7 @@ namespace Ex04.Menus.Interfaces
                 return k_ExitOption;
             }
         }
-   
+
         public SubMenu SubMenuItem
         {
             get

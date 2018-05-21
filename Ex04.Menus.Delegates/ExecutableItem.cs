@@ -12,7 +12,7 @@ namespace Ex04.Menus.Delegates
         {
             Execute = null;
         }
-           
+
         public ExecutableItem(string i_Title, ExecutableHandler i_ItemToExecute)
         {
             Title = i_Title;
@@ -24,7 +24,6 @@ namespace Ex04.Menus.Delegates
             if (Execute == null)
             {
                 Console.WriteLine("The Executable item is not initialized.");
-
             }
             else
             {

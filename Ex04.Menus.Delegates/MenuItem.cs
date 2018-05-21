@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Ex04.Menus.Delegates
 {
     public abstract class MenuItem
@@ -14,6 +15,7 @@ namespace Ex04.Menus.Delegates
             {
                 return m_MenuItemOptionNumber;
             }
+
             set
             {
                 m_MenuItemOptionNumber = value;
@@ -34,5 +36,3 @@ namespace Ex04.Menus.Delegates
         }
     }
 }
-
-

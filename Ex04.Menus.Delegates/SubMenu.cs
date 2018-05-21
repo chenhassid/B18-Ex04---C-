@@ -6,8 +6,8 @@ namespace Ex04.Menus.Delegates
     public class SubMenu : MenuItem
     {
         private const string k_MenuPartition = "***************************";
-        private List<MenuItem> m_ListOfMenuItems;
         private readonly int k_BackOption;
+        private List<MenuItem> m_ListOfMenuItems;
 
         public SubMenu(string i_Title)
         {
@@ -85,7 +85,6 @@ namespace Ex04.Menus.Delegates
             }
 
             Console.WriteLine(string.Format("{0}{1}{2}{1}", Title, Environment.NewLine, MenuPartition));
-           
 
             foreach (MenuItem currentMenuItem in ListOfMenuItems)
             {
@@ -94,7 +93,9 @@ namespace Ex04.Menus.Delegates
                     Console.WriteLine(string.Format("{0}: {1}", currentMenuItem.MenuItemOptionNumber, currentMenuItem.Title));
                 }
             }
-            Console.WriteLine(string.Format("{0}Please choose one of the options: {1}/{2} or 0 to {3}",Environment.NewLine, 1, ListOfMenuItems.Count - 1, exitOrBackString));
+
+            Console.WriteLine(string.Format("0: {0} {1}", exitOrBackString, Environment.NewLine));
+            Console.WriteLine(string.Format("{0}Please choose one of the options: {1}/{2} or 0 to {3}", Environment.NewLine, 1, ListOfMenuItems.Count - 1, exitOrBackString));
         }
 
         private int getValidInputOption()
@@ -128,8 +129,7 @@ namespace Ex04.Menus.Delegates
 
         private void MovetoNextChosenOption(int i_InputOptionNumber)
         {
-          //  Console.Clear();
-
+            // Console.Clear();
             if (i_InputOptionNumber != BackOption)
             {
                 ListOfMenuItems[i_InputOptionNumber].ExecuteMenuOption();
@@ -137,5 +137,3 @@ namespace Ex04.Menus.Delegates
         }
     }
 }
-
-

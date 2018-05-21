@@ -3,7 +3,7 @@ using Ex04.Menus.Delegates;
 
 namespace Ex04.Menus.Test
 {
-    class Program
+    public class Program
     {
         public static void Main()
         {
@@ -13,7 +13,7 @@ namespace Ex04.Menus.Test
             delegateMenu.Show();
         }
 
-        // building the main menu using interfaces
+        // Building the main menu using interfaces
         private static Interfaces.MainMenu buildMainMenuInterface()
         {
             // Create Executable Items 
@@ -27,7 +27,7 @@ namespace Ex04.Menus.Test
             Interfaces.ExecutableItem executableItemCountCapitals = new Interfaces.ExecutableItem("Count Capitals", countCapitalsExcute);
             Interfaces.ExecutableItem executableItemShowVersion = new Interfaces.ExecutableItem("Show Version", showVersionExcute);
 
-            //Creates the sub menus: "Show Date/Time" and "Version and Capitals"
+            // Creates the sub menus: "Show Date/Time" and "Version and Capitals"
             Interfaces.SubMenu showDateAndTimeMenu = new Interfaces.SubMenu("Show Date/Time");
             showDateAndTimeMenu.AddItem(executableItemShowTime);
             showDateAndTimeMenu.AddItem(executableItemShowDate);
@@ -35,7 +35,7 @@ namespace Ex04.Menus.Test
             VersionAndCapitalsMenu.AddItem(executableItemCountCapitals);
             VersionAndCapitalsMenu.AddItem(executableItemShowVersion);
 
-            //Creates the Main Menu with both of the sub menus
+            // Creates the Main Menu with both of the sub menus
             Interfaces.MainMenu mainMenuInterface = new Interfaces.MainMenu("Main Menu Using Interface");
             mainMenuInterface.AddItemToMainMenu(showDateAndTimeMenu);
             mainMenuInterface.AddItemToMainMenu(VersionAndCapitalsMenu);
@@ -55,7 +55,7 @@ namespace Ex04.Menus.Test
             Delegates.ExecutableItem executableItemCountCapitals = new Delegates.ExecutableItem("Count Capitals Letters", countCapitalsExcute);
             Delegates.ExecutableItem executableItemShowVersion = new Delegates.ExecutableItem("Show Version", showVersionExcute);
 
-            //Creates the sub menus: "Show Date/Time" and "Version and Capitals"
+            // Creates the sub menus: "Show Date/Time" and "Version and Capitals"
             Delegates.SubMenu showDateAndTimeMenu = new Delegates.SubMenu("Show Date/Time");
             showDateAndTimeMenu.AddItem(executableItemShowTime);
             showDateAndTimeMenu.AddItem(executableItemShowDate);
@@ -63,7 +63,7 @@ namespace Ex04.Menus.Test
             VersionAndCapitalsMenu.AddItem(executableItemCountCapitals);
             VersionAndCapitalsMenu.AddItem(executableItemShowVersion);
 
-            //Creates the Main Menu with both of the sub menus
+            // Creates the Main Menu with both of the sub menus
             Delegates.MainMenu mainMenuDelegate = new Delegates.MainMenu("Main Menu Using Delegate");
             mainMenuDelegate.AddItemToMainMenu(showDateAndTimeMenu);
             mainMenuDelegate.AddItemToMainMenu(VersionAndCapitalsMenu);

@@ -17,6 +17,7 @@ namespace Ex04.Menus.Interfaces
             {
                 return m_Executable;
             }
+
             set
             {
                 m_Executable = value;
@@ -34,7 +35,6 @@ namespace Ex04.Menus.Interfaces
             if (Executable == null)
             {
                 Console.WriteLine("The Executable item is not initialized.");
-
             }
             else
             {
@@ -44,4 +44,3 @@ namespace Ex04.Menus.Interfaces
         }
     }
 }
-

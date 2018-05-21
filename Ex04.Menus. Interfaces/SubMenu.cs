@@ -6,8 +6,8 @@ namespace Ex04.Menus.Interfaces
     public class SubMenu : MenuItem
     {
         private const string k_MenuPartition = "***************************";
-        private List<MenuItem> m_ListOfMenuItems;
         private readonly int k_BackOption;
+        private List<MenuItem> m_ListOfMenuItems;
 
         public SubMenu(string i_Title)
         {
@@ -35,7 +35,7 @@ namespace Ex04.Menus.Interfaces
                 return k_MenuPartition;
             }
         }
-         
+
         private void addBackItem()
         {
             ExecutableItem backItem = new ExecutableItem();
@@ -43,11 +43,11 @@ namespace Ex04.Menus.Interfaces
             backItem.MenuItemOptionNumber = k_BackOption;
             ListOfMenuItems.Add(backItem);
         }
-        
+
         public void AddItem(MenuItem i_NewItem)
         {
             ListOfMenuItems.Add(i_NewItem);
-            i_NewItem.MenuItemOptionNumber =  ListOfMenuItems.Count - 1;
+            i_NewItem.MenuItemOptionNumber = ListOfMenuItems.Count - 1;
         }
 
         internal override void ExecuteMenuOption()
@@ -84,7 +84,6 @@ namespace Ex04.Menus.Interfaces
             }
 
             Console.WriteLine(string.Format("{0}{1}{2}{1}", Title, Environment.NewLine, MenuPartition));
-          
 
             foreach (MenuItem currentMenuItem in ListOfMenuItems)
             {
@@ -93,6 +92,8 @@ namespace Ex04.Menus.Interfaces
                     Console.WriteLine(string.Format("{0}: {1}", currentMenuItem.MenuItemOptionNumber, currentMenuItem.Title));
                 }
             }
+
+            Console.WriteLine(string.Format("0: {0} {1}", exitOrBackString, Environment.NewLine));
             Console.WriteLine(string.Format("{0}Please choose one of the options: {1}/{2} or 0 to {3}", Environment.NewLine, 1, ListOfMenuItems.Count - 1, exitOrBackString));
         }
 
@@ -104,8 +105,8 @@ namespace Ex04.Menus.Interfaces
 
             while (!isValidInput)
             {
-               userInputString = Console.ReadLine();
-               if (!int.TryParse(userInputString, out userInputNumber))
+                userInputString = Console.ReadLine();
+                if (!int.TryParse(userInputString, out userInputNumber))
                 {
                     Console.WriteLine("This input format is invalid. Please try again.");
                 }
@@ -119,7 +120,7 @@ namespace Ex04.Menus.Interfaces
                     {
                         isValidInput = true;
                     }
-                }                  
+                }
             }
 
             return userInputNumber;

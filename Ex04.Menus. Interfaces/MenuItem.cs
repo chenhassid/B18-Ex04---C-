@@ -1,5 +1,4 @@
-﻿
-namespace Ex04.Menus.Interfaces
+﻿namespace Ex04.Menus.Interfaces
 {
     public abstract class MenuItem
     {
@@ -14,6 +13,7 @@ namespace Ex04.Menus.Interfaces
             {
                 return m_MenuItemOptionNumber;
             }
+
             set
             {
                 m_MenuItemOptionNumber = value;

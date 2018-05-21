@@ -25,7 +25,6 @@ namespace Ex04.Menus.Test
         {
             DateTime currentDateTime = DateTime.Now;
             Console.WriteLine(i_DateOrTimeFormat, currentDateTime);
-
         }
 
         public class ShowVersion : IExecutable
@@ -33,7 +32,6 @@ namespace Ex04.Menus.Test
             public void Execute()
             {
                 Console.WriteLine("Version: 18.2.4.0");
-
             }
         }
 
@@ -52,14 +50,11 @@ namespace Ex04.Menus.Test
                     if (char.IsUpper(userInputString[i]))
                     {
                         countCapitalLetters++;
-
                     }
                 }
 
                 Console.WriteLine(string.Format("There are {0} capital letters in your sentence", countCapitalLetters));
-
             }
         }
     }
 }
-
