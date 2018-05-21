@@ -40,6 +40,7 @@ namespace Ex04.Menus.Interfaces
             ExecutableItem backItem = new ExecutableItem();
             backItem.Title = "Back";
             backItem.MenuItemOptionNumber = k_BackOption;
+            Console.WriteLine("REache HER?");
             ListOfMenuItems.Add(backItem);
         }
         

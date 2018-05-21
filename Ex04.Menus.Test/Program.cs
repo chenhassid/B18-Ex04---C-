@@ -29,8 +29,8 @@ namespace Ex04.Menus.Test
             showDateAndTimeMenu.AddItem(executableItemShowTime);
             showDateAndTimeMenu.AddItem(executableItemShowDate);
             Interfaces.SubMenu VersionAndCapitalsMenu = new Interfaces.SubMenu("Version and Capitals");
-            showDateAndTimeMenu.AddItem(executableItemCountCapitals);
-            showDateAndTimeMenu.AddItem(executableItemShowVersion);
+            VersionAndCapitalsMenu.AddItem(executableItemCountCapitals);
+            VersionAndCapitalsMenu.AddItem(executableItemShowVersion);
 
             //Creates the Main Menu with both of the sub menus
             Interfaces.MainMenu mainMenuInterface = new Interfaces.MainMenu("Main Menu Of the Interface");

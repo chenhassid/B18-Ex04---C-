@@ -46,7 +46,7 @@ namespace Ex04.Menus.Interfaces
         public void Show()
         {
             Console.Clear();
-            SubMenuItem.ExecuteMenuOption();
+            m_SubMenuItem.ExecuteMenuOption();
         }
     }
 }
