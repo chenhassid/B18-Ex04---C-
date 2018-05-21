@@ -37,8 +37,33 @@ namespace Ex04.Menus.Test
             mainMenuInterface.AddItemToMainMenu(showDateAndTimeMenu);
             mainMenuInterface.AddItemToMainMenu(VersionAndCapitalsMenu);
             return mainMenuInterface;
+        }
 
+        private static Delegates.MainMenu buildMenuWithDelegates()
+        {
+            ExecutableDelegate showTimeExecute = new MenuDelegatesAndInterfaces.ShowTime().Execute;
+            ExecutableDelegate showDateExcute = new MenuDelegatesAndInterfaces.ShowDate().Execute;
+            ExecutableDelegate countCapitalsExcute = new MenuDelegatesAndInterfaces.CountCapitals().Execute;
+            ExecutableDelegate showVersionExcute = new MenuDelegatesAndInterfaces.ShowVersion().Execute;
+
+            Delegates.ExecutableItem executableItemShowTime = new Delegates.ExecutableItem("Show Time", showTimeExecute);
+            Delegates.ExecutableItem executableItemShowDate = new Delegates.ExecutableItem("Show Date", showDateExcute);
+            Delegates.ExecutableItem executableItemCountCapitals = new Delegates.ExecutableItem("Count Capitals Letters", countCapitalsExcute);
+            Delegates.ExecutableItem executableItemShowVersion = new Delegates.ExecutableItem("Show Version", showVersionExcute);
+
+            //Creates the sub menus: "Show Date/Time" and "Version and Capitals"
+            Delegates.SubMenu showDateAndTimeMenu = new Delegates.SubMenu("Show Date/Time");
+            showDateAndTimeMenu.AddItem(executableItemShowTime);
+            showDateAndTimeMenu.AddItem(executableItemShowDate);
+            Delegates.SubMenu VersionAndCapitalsMenu = new Delegates.SubMenu("Version and Capitals");
+            VersionAndCapitalsMenu.AddItem(executableItemCountCapitals);
+            VersionAndCapitalsMenu.AddItem(executableItemShowVersion);
+
+            //Creates the Main Menu with both of the sub menus
+            Delegates.MainMenu mainMenuDelegate = new Delegates.MainMenu("Main Menu Of the Interface");
+            mainMenuDelegate.AddItemToMainMenu(showDateAndTimeMenu);
+            mainMenuDelegate.AddItemToMainMenu(VersionAndCapitalsMenu);
+            return mainMenuDelegate;
         }
     }
 }
-

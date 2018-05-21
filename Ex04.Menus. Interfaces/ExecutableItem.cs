@@ -33,7 +33,7 @@ namespace Ex04.Menus.Interfaces
         {
             if (Executable == null)
             {
-                Console.WriteLine("Please initialize Executable item.");
+                Console.WriteLine("The Executable item is not initialized.");
 
             }
             else

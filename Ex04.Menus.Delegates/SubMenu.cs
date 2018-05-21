@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Delegates
 {
     public class SubMenu : MenuItem
     {
@@ -35,19 +35,22 @@ namespace Ex04.Menus.Interfaces
                 return k_MenuPartition;
             }
         }
-         
+
         private void addBackItem()
         {
             ExecutableItem backItem = new ExecutableItem();
             backItem.Title = "Back";
             backItem.MenuItemOptionNumber = k_BackOption;
+
+            Console.WriteLine("REache HER?");
+
             ListOfMenuItems.Add(backItem);
         }
-        
+
         public void AddItem(MenuItem i_NewItem)
         {
             ListOfMenuItems.Add(i_NewItem);
-            i_NewItem.MenuItemOptionNumber =  ListOfMenuItems.Count - 1;
+            i_NewItem.MenuItemOptionNumber = ListOfMenuItems.Count - 1;
         }
 
         internal override void ExecuteMenuOption()
@@ -56,7 +59,7 @@ namespace Ex04.Menus.Interfaces
 
             if (ListOfMenuItems.Count == 0)
             {
-                Console.WriteLine("Can't show this item. The menu items list is empty.");
+                Console.WriteLine("Can't show this item. The menu items list is enpty.");
             }
             else
             {
@@ -95,7 +98,7 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-    private int getValidInputOption()
+        private int getValidInputOption()
         {
             bool isValidInput = false;
             string userInputString = string.Empty;
@@ -103,8 +106,8 @@ namespace Ex04.Menus.Interfaces
 
             while (!isValidInput)
             {
-               userInputString = Console.ReadLine();
-               if (!int.TryParse(userInputString, out userInputNumber))
+                userInputString = Console.ReadLine();
+                if (!int.TryParse(userInputString, out userInputNumber))
                 {
                     Console.WriteLine("This input format is invalid. Please try again.");
                 }
@@ -118,7 +121,7 @@ namespace Ex04.Menus.Interfaces
                     {
                         isValidInput = true;
                     }
-                }                  
+                }
             }
 
             return userInputNumber;
@@ -135,3 +138,5 @@ namespace Ex04.Menus.Interfaces
         }
     }
 }
+
+
