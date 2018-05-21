@@ -24,7 +24,7 @@ namespace Ex04.Menus.Test
 
             Interfaces.ExecutableItem executableItemShowTime = new Interfaces.ExecutableItem("Show Time", showTimeExecute);
             Interfaces.ExecutableItem executableItemShowDate = new Interfaces.ExecutableItem("Show Date", showDateExcute);
-            Interfaces.ExecutableItem executableItemCountCapitals = new Interfaces.ExecutableItem("Count Capitals Letters", countCapitalsExcute);
+            Interfaces.ExecutableItem executableItemCountCapitals = new Interfaces.ExecutableItem("Count Capitals", countCapitalsExcute);
             Interfaces.ExecutableItem executableItemShowVersion = new Interfaces.ExecutableItem("Show Version", showVersionExcute);
 
             //Creates the sub menus: "Show Date/Time" and "Version and Capitals"
